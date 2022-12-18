@@ -8,10 +8,11 @@
 
 .charCard-status {
   display: flex;
+
 }
 
 .charCard-status-icon {
-  font-size: smaller;
+  font-size: x-small;
 }
 
 .charCard-status-icon_alive {
