@@ -9,9 +9,10 @@ import { HomecomponentComponent } from './components/homecomponent/homecomponent
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import { CharacterdataService } from './services/characterdata.service';
 import { SearchbarService } from './services/searchbar.service';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, FormsModule, MatIconModule, ],
   declarations: [
     AppComponent,
     RandmsvgComponent,
