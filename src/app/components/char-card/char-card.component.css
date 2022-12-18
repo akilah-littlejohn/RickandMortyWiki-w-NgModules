@@ -22,3 +22,7 @@
 .charCard-status-icon_dead {
   color: red;
 }
+.charCard-status-icon_unknown {
+  color: grey;
+}
+
