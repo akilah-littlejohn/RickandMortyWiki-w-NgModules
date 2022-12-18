@@ -1,0 +1,37 @@
+form {
+  display: flex;
+  flex-direction: row;
+  border-radius: 0px 20px 20px 0px;
+  border: 1px solid darkgrey;
+  width: 600px;
+  margin: 30px;
+  padding: 2px;
+  height: 50px;
+  font-family: 'Annie Use Your Telescope';font-size: 22px;
+
+  
+}
+input {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  padding: 10px;
+  border: none;
+  outline-style: none;
+  font-family: 'Annie Use Your Telescope';font-size: 22px;
+
+}
+
+button {
+  width: 156px;
+  height: 50px;
+  border-radius: 0px 20px 20px 0px;
+  color: #fff;
+  background: linear-gradient(to bottom     left,forestgreen, chartreuse);
+  border: none;
+  font-family: 'Luckiest Guy';
+  font-size: large;
+  text-shadow: 1px 2px 10px black;
+
+
+}
