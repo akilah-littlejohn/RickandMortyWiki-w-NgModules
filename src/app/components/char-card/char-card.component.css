@@ -1,5 +1,5 @@
 h4 {
-  color: #eee;
+  color: chartreuse;
 }
 p {
   font-family: 'Annie Use Your Telescope';
@@ -15,14 +15,19 @@ p {
   border-radius: 15px;
   color: #fff;
 }
+.charCard-textbox {
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
 
+}
 .charCard-container {
   display: flex;
-
 }
 
 .charCard-status-icon {
   font-size: x-small;
+  border: red solid;
 }
 
 .charCard-status-icon_alive {
@@ -35,4 +40,3 @@ p {
 .charCard-status-icon_unknown {
   color: grey;
 }
-

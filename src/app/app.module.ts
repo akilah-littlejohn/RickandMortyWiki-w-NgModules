@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { RandmsvgComponent } from './home-svgtemplate/randmsvg/randmsvg.component';
@@ -12,7 +13,7 @@ import { SearchbarService } from './services/searchbar.service';
 import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, MatIconModule, ],
+  imports: [BrowserModule, FormsModule, MatIconModule, HttpClientModule ],
   declarations: [
     AppComponent,
     RandmsvgComponent,
