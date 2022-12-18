@@ -7,8 +7,8 @@ import { RandmsvgComponent } from './home-svgtemplate/randmsvg/randmsvg.componen
 import { CharCardComponent } from './components/char-card/char-card.component';
 import { HomecomponentComponent } from './components/homecomponent/homecomponent.component';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
-import { CharacterdataService } from './sevices/characterdata.service';
-import { SearchbarService } from './sevices/searchbar.service';
+import { CharacterdataService } from './services/characterdata.service';
+import { SearchbarService } from './services/searchbar.service';
 
 @NgModule({
   imports: [BrowserModule, FormsModule],
