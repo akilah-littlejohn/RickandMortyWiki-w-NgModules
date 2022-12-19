@@ -9,8 +9,18 @@ import { Character } from './model/character';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  @Input() character!: Character;
-
+  character!: Character;
+  
   constructor(public api: CharacterdataService) {}
-  ngOnInit() {}
+  ngOnInit() {
+    this.api.getCharacterData().subscribe((data) => {
+  
+      this.character = {
+        image: data['results'][0]['image'],
+        name: data['results'][0]['name'],
+        lk_location: data['results'][0]['location'].name,
+        fs_episode: data['results'][0]['episode'][50],
+      };
+    });
+  }
 }

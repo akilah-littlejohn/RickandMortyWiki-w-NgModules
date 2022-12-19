@@ -1,15 +1,15 @@
 <section class="characterCard-wrapper charCard-container charCard-textbox">
   <section>
-    <h2>Rick Sanchez</h2>
-    <img src="" alt="" />
+    <h2>{{characterInfo.name}}</h2>
+    <img [src]="characterInfo.image" alt="" />
     <section>
       <h4>Last known location:</h4>
-      <p>The Crib</p>
+      <p>{{characterInfo.lk_location}}</p>
     </section>
 
     <section>
       <h4>First seen in:</h4>
-      <p>Pilot Episode</p>
+      
     </section>
   </section>
 </section>
