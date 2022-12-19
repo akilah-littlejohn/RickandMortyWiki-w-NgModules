@@ -6,7 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { RandmsvgComponent } from './home-svgtemplate/randmsvg/randmsvg.component';
 import { CharCardComponent } from './components/char-card/char-card.component';
-import { HomecomponentComponent } from './components/homecomponent/homecomponent.component';
+import { HomeComponent } from './components/home/home.component';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import { CharacterdataService } from './services/characterdata.service';
 import { SearchbarService } from './services/searchbar.service';
@@ -18,7 +18,7 @@ import { MatIconModule } from '@angular/material/icon';
     AppComponent,
     RandmsvgComponent,
     CharCardComponent,
-    HomecomponentComponent,
+    HomeComponent,
     SearchbarComponent,
   ],
   bootstrap: [AppComponent],
