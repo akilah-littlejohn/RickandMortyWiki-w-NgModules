@@ -9,9 +9,7 @@ import { CharacterdataService } from './services/characterdata.service';
 export class AppComponent implements OnInit  {
   constructor(public api:CharacterdataService){
   }
-  name = 'Angular ' + VERSION.major;
   ngOnInit(){
-    this.api.getCharacterData()
 
   }
 }
