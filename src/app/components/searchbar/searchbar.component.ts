@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CharacterSearchFilterPipe } from '../../character-search-filter.pipe';
 
 @Component({
   selector: 'app-searchbar',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(public  filterNames:CharacterSearchFilterPipe) { }
 
   ngOnInit() {
   }
