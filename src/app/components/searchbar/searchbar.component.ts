@@ -23,8 +23,11 @@ export class SearchbarComponent implements OnInit {
   ngOnInit() {
     this.urlApi.getCharacterData().subscribe((data) => {
       this.charactaName = data['results'];
-      this.allcharacterNames = this.charactaName;
-      console.log(this.allcharacterNames);
+      //this.allcharacterNames = this.charactaName;
+      this.allcharacterNames = this.charactaName.map(data => data['name']);
+
+      console.log(this.allcharacterNames)  
+
     });
   }
 }

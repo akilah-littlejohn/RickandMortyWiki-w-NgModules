@@ -6,8 +6,8 @@
     [(ngModel)]="_searchCharacterName"
     (input)="
       this.searchFilteredNames.formatFilteredNames(
-        charactaName,
-        allcharacterNames,
+        this.charactaName,
+        this.allcharacterNames,
         _searchCharacterName
       )
     "
