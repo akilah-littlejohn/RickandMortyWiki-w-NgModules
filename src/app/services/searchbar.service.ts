@@ -9,5 +9,6 @@ export class SearchbarService {
       name = allNames.filter((val) =>
       val.name.toLowerCase().includes(value)
     );
+    console.log(name)
   }
 }
