@@ -1,4 +1,16 @@
-<form action="">
-  <input type="search" placeholder="Enter Character Here...." />
+<form>
+  <input
+    type="search"
+    placeholder="Enter Character Here...."
+    name="_searchCharacterName"
+    [(ngModel)]="_searchCharacterName"
+    (input)="
+      this.searchFilteredNames.formatFilteredNames(
+        charactaName,
+        allcharacterNames,
+        _searchCharacterName
+      )
+    "
+  />
   <button type="submit">Search</button>
 </form>
