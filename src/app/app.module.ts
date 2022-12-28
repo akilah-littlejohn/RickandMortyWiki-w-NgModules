@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
+import {MatAutocompleteModule } from '@angular/material/autocomplete';
+
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
@@ -10,10 +13,9 @@ import { HomeComponent } from './components/home/home.component';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import { CharacterdataService } from './services/characterdata.service';
 import { SearchbarService } from './services/searchbar.service';
-import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, MatIconModule, HttpClientModule ],
+  imports: [BrowserModule, FormsModule, MatIconModule,MatAutocompleteModule, HttpClientModule ],
   declarations: [
     AppComponent,
     RandmsvgComponent,
