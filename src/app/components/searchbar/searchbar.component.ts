@@ -1,19 +1,30 @@
 import { Component, OnInit } from '@angular/core';
 import { CharacterSearchFilterPipe } from '../../character-search-filter.pipe';
+import { CharacterdataService } from '../../services/characterdata.service';
 import { SearchbarService } from '../../services/searchbar.service';
 
 @Component({
   selector: 'app-searchbar',
   templateUrl: './searchbar.component.html',
-  styleUrls: ['./searchbar.component.css']
+  styleUrls: ['./searchbar.component.css'],
 })
 export class SearchbarComponent implements OnInit {
-charactaName:any[];
-allcharacterNamesany:any[];
-  constructor(public filterNames:CharacterSearchFilterPipe, public searchbarService:SearchbarService) { }
+  charactaName: any[];
+  allcharacterNames: any[];
+  _searchCharacterName:string = ''
+
+
+  constructor(
+    public filterNames: CharacterSearchFilterPipe,
+    public urlApi: CharacterdataService,
+    public searchFilteredNames: SearchbarService
+  ) {}
 
   ngOnInit() {
-    this.searchbarService.getCharactersName(this.charactaName, this.allcharacterNamesany);
+    this.urlApi.getCharacterData().subscribe((data) => {
+      this.charactaName = data['results'];
+      this.allcharacterNames = this.charactaName;
+      console.log(this.allcharacterNames);
+    });
   }
-
 }
