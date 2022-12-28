@@ -7,7 +7,7 @@ export class SearchbarService {
 
   formatFilteredNames( name: any, allNames: any[], value: string): void {
       name = allNames.filter((val) =>
-      val.name.toLowerCase().includes(value)
+      val.toLowerCase().includes(value)
     );
     console.log(name)
   }
