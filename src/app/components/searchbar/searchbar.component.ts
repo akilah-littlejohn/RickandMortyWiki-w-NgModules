@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CharacterSearchFilterPipe } from '../../character-search-filter.pipe';
+import { FormControl } from '@angular/forms';
+import { Observable } from 'rxjs';
 import { CharacterdataService } from '../../services/characterdata.service';
 import { SearchbarService } from '../../services/searchbar.service';
 
@@ -9,25 +10,24 @@ import { SearchbarService } from '../../services/searchbar.service';
   styleUrls: ['./searchbar.component.css'],
 })
 export class SearchbarComponent implements OnInit {
-  charactaName: any[];
-  allcharacterNames: any[];
-  _searchCharacterName:string = ''
+
+  searchbar_input = new FormControl('');
+  all_character_names:string[];
+  character_names_filtered: Observable<string[]>;
 
 
   constructor(
-    public filterNames: CharacterSearchFilterPipe,
+
     public urlApi: CharacterdataService,
-    public searchFilteredNames: SearchbarService
+    public filteredNames: SearchbarService
   ) {}
 
   ngOnInit() {
-    this.urlApi.getCharacterData().subscribe((data) => {
-      this.charactaName = data['results'];
-      //this.allcharacterNames = this.charactaName;
-      this.allcharacterNames = this.charactaName.map(data => data['name']);
+    this.urlApi.getCharacterData().subscribe(
+      results => this.all_character_names = results['results']['name']
 
-      console.log(this.allcharacterNames)  
+    )
 
-    });
+
   }
 }

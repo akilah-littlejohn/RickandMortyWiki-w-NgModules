@@ -3,14 +3,8 @@
     type="search"
     placeholder="Enter Character Here...."
     name="_searchCharacterName"
-    [(ngModel)]="_searchCharacterName"
-    (input)="
-      this.searchFilteredNames.formatFilteredNames(
-        this.charactaName,
-        this.allcharacterNames,
-        _searchCharacterName
-      )
-    "
+    [formControl]="_searchCharacterName"
+    [matAutocomplete]="auto"
   />
 
 
