@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CharacterSearchFilterPipe } from '../../character-search-filter.pipe';
 import { CharacterdataService } from '../../services/characterdata.service';
 import { SearchbarService } from '../../services/searchbar.service';
@@ -9,7 +9,7 @@ import { SearchbarService } from '../../services/searchbar.service';
   styleUrls: ['./searchbar.component.css'],
 })
 export class SearchbarComponent implements OnInit {
-  charactaName: any[];
+  @Input() charactaName: any[];
   allcharacterNames: any[];
   _searchCharacterName:string = ''
 

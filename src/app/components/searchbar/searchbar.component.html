@@ -14,3 +14,9 @@
   />
   <button type="submit">Search</button>
 </form>
+
+<img [src]="character.image" *ngFor="
+let character of allcharacterNames | characterSearchFilter: _searchCharacterName;
+index as i
+"
+>
