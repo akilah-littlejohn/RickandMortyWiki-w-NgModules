@@ -4,16 +4,19 @@ form {
   border-radius: 0px 20px 20px 0px;
   border: 1px solid darkgrey;
   width: 600px;
-  margin: 30px;
+  margin: 10px;
   padding: 2px;
-  height: 50px;
   font-family: 'Annie Use Your Telescope';font-size: 22px;
 
   
 }
-input {
+
+.searchbar-wrapper {
   display: flex;
-  flex-direction: row;
+  justify-content: center;
+}
+input {
+
   flex-grow: 1;
   padding: 10px;
   border: none;
@@ -38,10 +41,9 @@ button {
 }
 
 .char-card--container {
-  width: 100%;
-  margin-top: 20px;
+  margin: 20px;
   background-color: rgb(32 35 41);
   display: flex;
   justify-content: center;
-  padding: 30px;
+
 }
