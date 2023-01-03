@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./char-card.component.css']
 })
 export class CharCardComponent implements OnInit {
-  @Input() c:any= []
+  @Input() characterInfo:any
   constructor() { 
 
   }
