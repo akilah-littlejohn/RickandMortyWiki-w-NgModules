@@ -12,7 +12,6 @@ export class CharCardComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.c)
   }
 
 }
