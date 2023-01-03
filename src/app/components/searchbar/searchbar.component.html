@@ -14,16 +14,10 @@
   />
   <button type="submit">Search</button>
 </form>
+
 <app-char-card *ngFor="
 let character of allcharacterNames
   | characterSearchFilter: _searchCharacterName;
 index as i
 " [characterInfo]=character></app-char-card>
-<img
-  [src]="character.image"
-  *ngFor="
-    let character of allcharacterNames
-      | characterSearchFilter: _searchCharacterName;
-    index as i
-  "
-/>
+

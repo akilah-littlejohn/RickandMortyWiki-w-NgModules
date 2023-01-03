@@ -1,15 +1,13 @@
-<section class="characterCard-wrapper charCard-container charCard-textbox">
-  <section>
-    <h2>{{ characterInfo.name }}</h2>
-    <img [src]="characterInfo.image" alt="">
- 
+<article class="char-card--container">
+  <section class="characterCard-wrapper charCard-container charCard-textbox">
     <section>
-      <h4>Status:</h4>
-      <p>{{characterInfo.status}}</p>
-    </section>
+      <h2>{{ characterInfo.name }}</h2>
+      <img [src]="characterInfo.image" alt="" />
 
-    <section>
-      <h4>First seen in:</h4>
+      <section>
+        <h4>Status:</h4>
+        <p>{{ characterInfo.status }}</p>
+      </section>
     </section>
   </section>
-</section>
+</article>

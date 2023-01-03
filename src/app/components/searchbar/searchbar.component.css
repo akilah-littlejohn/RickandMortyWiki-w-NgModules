@@ -36,3 +36,12 @@ button {
 
 
 }
+
+.char-card--container {
+  width: 100%;
+  margin-top: 20px;
+  background-color: rgb(32 35 41);
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
