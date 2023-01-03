@@ -14,7 +14,7 @@
   />
   <button type="submit">Search</button>
 </form>
-<app-char-card    *ngFor="
+<app-char-card *ngFor="
 let character of allcharacterNames
   | characterSearchFilter: _searchCharacterName;
 index as i
