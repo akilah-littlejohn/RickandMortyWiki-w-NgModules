@@ -6,10 +6,13 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./char-card.component.css']
 })
 export class CharCardComponent implements OnInit {
-@Input() characterInfo
-  constructor() { }
+  @Input() c:any= []
+  constructor() { 
+
+  }
 
   ngOnInit() {
+    console.log(this.c)
   }
 
 }
