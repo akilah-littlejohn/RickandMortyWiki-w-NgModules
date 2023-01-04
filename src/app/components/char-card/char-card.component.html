@@ -1,21 +1,19 @@
 <article class="char-card--container">
   <section class="characterCard-wrapper charCard-container charCard-textbox">
-    <h2>{{ characterInfo.name }}</h2>
+  
     <img [src]="characterInfo.image" alt="" />
+    <h2>{{ characterInfo.name }}</h2>
     <mat-list>
       <mat-list-item>
         <mat-icon matListItemIcon>circle</mat-icon>
-        <h1 matListItemTitle>Status:</h1>
-        <p matListItemLine>{{ characterInfo.status }}</p>
-      </mat-list-item>
-      <mat-list-item>
-        <h4 matListItemTitle>Gender:</h4>
-        <p matListItemLine>{{ characterInfo.gender }}</p>
-      </mat-list-item>
-      <mat-list-item>
-        <h4 matListItemTitle>Location:</h4>
-        <p matListItemLine>{{ characterInfo.location.name }}</p>
+        <h1 matListItemTitle>
+          Status:{{ characterInfo.status }}/{{ characterInfo.species }}
+        </h1>
       </mat-list-item>
     </mat-list>
+    <ul>
+      <li>{{ characterInfo.location.name }}</li>
+      <li>{{ characterInfo.gender }}</li>
+    </ul>
   </section>
 </article>
