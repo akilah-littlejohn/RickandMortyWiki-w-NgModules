@@ -1,0 +1,15 @@
+/* Add application styles & imports to this file! */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '~@angular/material/theming';
+$custom-typography: mat-typography-config(
+  $font-family:  'Annie Use Your Telescope'
+);
+
+@include angular-material-typography($custom-typography);
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
