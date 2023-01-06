@@ -1,5 +1,6 @@
-h4 {
+h1 {
   color: #fff;
+  font-size:xx-large;
 }
 p {
   font-family: 'Annie Use Your Telescope';
@@ -22,9 +23,11 @@ img {
   color: #fff;
 }
 
-
+.charCard-container{
+  display: flex;
+}
 .char-card--container {
- 
+
   margin: 20px;
   background-color: rgb(32 35 41);
   padding: 30px;
