@@ -10,8 +10,10 @@ import { SearchbarService } from '../../services/searchbar.service';
 })
 export class SearchbarComponent implements OnInit {
   @Input() charactaName: any[];
+  @Input() pagenumber:number = 1;
   allcharacterNames: any[];
   _searchCharacterName:string = ''
+  
 
 
   constructor(
@@ -21,10 +23,12 @@ export class SearchbarComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.urlApi.getCharacterData().subscribe((data) => {
+    this.urlApi.getCharacterData(this.pagenumber).subscribe((data) => {
       this.charactaName = data['results'];
       this.allcharacterNames = this.charactaName;
       console.log(this.allcharacterNames);
     });
   }
+
+
 }

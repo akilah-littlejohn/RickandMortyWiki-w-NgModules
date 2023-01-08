@@ -17,12 +17,13 @@
   </form>
 </div>
 
-  
-
-
-<app-char-card *ngFor="
-let character of allcharacterNames
-  | characterSearchFilter: _searchCharacterName;
-index as i
-" [characterInfo]=character></app-char-card>
-
+<app-char-card
+  *ngFor="
+    let character of allcharacterNames
+      | characterSearchFilter: _searchCharacterName;
+    index as i
+  "
+  [characterInfo]="character"
+></app-char-card>
+<mat-icon class="char-next-btn">arrow_left</mat-icon>
+<mat-icon class="char-next-btn">arrow_right</mat-icon>
