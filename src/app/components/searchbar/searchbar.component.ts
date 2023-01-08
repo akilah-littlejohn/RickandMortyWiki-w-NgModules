@@ -23,10 +23,10 @@ export class SearchbarComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.urlApi.getCharacterData(this.pagenumber).subscribe((data) => {
+    this.urlApi.getCharacterData(this._searchCharacterName).subscribe((data) => {
       this.charactaName = data['results'];
       this.allcharacterNames = this.charactaName;
-      console.log(this.allcharacterNames);
+      console.log (this.charactaName);
     });
   }
 
