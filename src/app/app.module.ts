@@ -14,7 +14,6 @@ import { SearchbarService } from './services/searchbar.service';
 import { CharacterSearchFilterPipe } from './character-search-filter.pipe';
 import { SearchResultsComponent } from './components/searchbar/search-results/search-results.component';
 
-
 @NgModule({
   imports: [
     BrowserModule,
@@ -31,7 +30,6 @@ import { SearchResultsComponent } from './components/searchbar/search-results/se
     HomeComponent,
     SearchbarComponent,
     SearchResultsComponent,
-  
   ],
   bootstrap: [AppComponent],
   providers: [CharacterdataService, SearchbarService],

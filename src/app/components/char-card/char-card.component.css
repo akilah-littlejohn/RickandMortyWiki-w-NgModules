@@ -1,6 +1,6 @@
 h1 {
   color: #fff;
-  font-size:xx-large;
+  font-size: xx-large;
 }
 p {
   font-family: 'Annie Use Your Telescope';
@@ -9,8 +9,7 @@ p {
 }
 
 img {
-
-  box-shadow:1px 2px 10px black ;
+  box-shadow: 1px 2px 10px black;
   margin: 20px;
 }
 .characterCard-wrapper {
@@ -23,11 +22,10 @@ img {
   color: #fff;
 }
 
-.charCard-container{
+.charCard-container {
   display: flex;
 }
 .char-card--container {
-
   margin: 20px;
   background-color: rgb(32 35 41);
   padding: 30px;
