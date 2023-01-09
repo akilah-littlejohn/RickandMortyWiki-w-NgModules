@@ -5,8 +5,11 @@ import { HttpClient } from '@angular/common/http';
 export class CharacterdataService {
   urlApi = 'https://rickandmortyapi.com/api/character/?name=';
 
+
   constructor(public http: HttpClient) {}
   getCharacterData(name) {
     return this.http.get(`${this.urlApi}${name}`);
   }
+
+
 }

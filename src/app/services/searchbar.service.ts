@@ -9,4 +9,7 @@ export class SearchbarService {
     name = allNames.filter((val) => val.name.includes(value));
     console.log(name);
   }
+
+  getNextResults(){}
+  getPreviousResults(){}
 }
