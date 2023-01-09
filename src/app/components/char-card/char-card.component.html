@@ -1,22 +1,27 @@
 <article class="char-card--container">
-  <section class="characterCard-wrapper charCard-container charCard-textbox">
+  <section class="characterCard-wrapper">
     <div>
-      <img [src]="characterInfo.image" alt="" />
       <mat-list>
         <mat-list-item>
           <mat-icon matListItemIcon>circle</mat-icon>
-          <h1 matListItemTitle>
-            Status:{{ characterInfo.status }}/{{ characterInfo.species }}
-          </h1>
+          <h1 matListItemTitle> <span class="character-status_">{{characterInfo.status}}</span> | {{ characterInfo.name }} </h1>
         </mat-list-item>
       </mat-list>
+      <img [src]="characterInfo.image" alt="" />
     </div>
-    <div>
-      <h1>{{ characterInfo.name }}</h1>
-      <ul>
-        <li>{{ characterInfo.location.name }}</li>
-        <li>{{ characterInfo.gender }}</li>
-      </ul>
+    <div class="character-table">
+
+      <h3>Last Known Location:</h3>
+      <p>{{ characterInfo.location.name }}</p>
+
+      <h3>Gender:</h3>
+      <p>{{ characterInfo.gender }}</p>
+
+      <h3>Species:</h3>
+      <p>{{ characterInfo.species }}</p>
+
+      <h3>Number Of Episodes:</h3>
+      <p>{{ characterInfo.episode.length }}</p>
     </div>
   </section>
 </article>
