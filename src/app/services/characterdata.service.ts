@@ -3,12 +3,14 @@ import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class CharacterdataService {
-  urlApi = 'https://rickandmortyapi.com/api/character/?name=';
-
+  urlApi = "https://rickandmortyapi.com/api/character/?page=&"
+  
 
   constructor(public http: HttpClient) {}
-  getCharacterData(name) {
-    return this.http.get(`${this.urlApi}${name}`);
+  getCharacterData(name, number) {
+    return this.http.get(`https://rickandmortyapi.com/api/character/?page=${number}&name=${name}`);
+
+    console.log(`https://rickandmortyapi.com/api/character/?page=${number}&name=${name}`)
   }
 
 

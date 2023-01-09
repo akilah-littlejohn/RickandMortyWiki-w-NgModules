@@ -10,6 +10,4 @@ export class SearchbarService {
     console.log(name);
   }
 
-  getNextResults(){}
-  getPreviousResults(){}
 }

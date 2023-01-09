@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges, Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CharacterSearchFilterPipe } from '../../character-search-filter.pipe';
 import { CharacterdataService } from '../../services/characterdata.service';
 import { SearchbarService } from '../../services/searchbar.service';
@@ -8,9 +8,9 @@ import { SearchbarService } from '../../services/searchbar.service';
   templateUrl: './searchbar.component.html',
   styleUrls: ['./searchbar.component.css'],
 })
-export class SearchbarComponent implements OnInit, OnChanges {
+export class SearchbarComponent implements OnInit {
   @Input() charactaName: object[];
-  pagenumber: number = 1;
+  pagenumber: number = 0;
   allcharacterNames:unknown[];
   _searchCharacterName: string = '';
 
@@ -22,12 +22,21 @@ export class SearchbarComponent implements OnInit, OnChanges {
 
   ngOnInit() {
     this.urlApi
-      .getCharacterData(this._searchCharacterName)
+      .getCharacterData(this._searchCharacterName, this.pagenumber)
       .subscribe((data) => {
         this.charactaName = data['results'];
         this.allcharacterNames = this.charactaName;
         console.log(this.charactaName);
       });
+ 
   }
-  ngOnChanges() {}
+  getNextResults(){
+    this.pagenumber++
+    console.log(`https://rickandmortyapi.com/api/character/?page=${this.pagenumber}&name=${this._searchCharacterName}`) 
+    
+  }
+    getPreviousResults(){
+      this.pagenumber--
+      console.log(`https://rickandmortyapi.com/api/character/?page=${this.pagenumber}&name=${this._searchCharacterName}`)
+    }
 }
