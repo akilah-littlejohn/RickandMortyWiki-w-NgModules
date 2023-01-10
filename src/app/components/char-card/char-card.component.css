@@ -50,10 +50,6 @@ img {
   background-color: rgb(32 35 41);
   padding: 30px;
 }
-.charCard-status-icon {
-  font-size: x-small;
-  border: red solid;
-}
 
 .card-status-icon_alive {
   color: yellowgreen;
