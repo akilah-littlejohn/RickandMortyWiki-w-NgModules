@@ -21,7 +21,22 @@ export class SearchbarComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.urlApi
+    this.getCharacterdata();
+
+  }
+  getNextResults(){
+    this.pagenumber++
+    console.log(`https://rickandmortyapi.com/api/character/?page=${this.pagenumber}&name=${this._searchCharacterName}`) 
+    this.getCharacterdata();
+    
+  }
+    getPreviousResults(){
+      this.pagenumber--
+      console.log(`https://rickandmortyapi.com/api/character/?page=${this.pagenumber}&name=${this._searchCharacterName}`)
+    }
+
+    getCharacterdata(){
+      this.urlApi
       .getCharacterData(this._searchCharacterName, this.pagenumber)
       .subscribe((data) => {
         this.charactaName = data['results'];
@@ -29,14 +44,6 @@ export class SearchbarComponent implements OnInit {
         console.log(this.charactaName);
       });
  
-  }
-  getNextResults(){
-    this.pagenumber++
-    console.log(`https://rickandmortyapi.com/api/character/?page=${this.pagenumber}&name=${this._searchCharacterName}`) 
-    
-  }
-    getPreviousResults(){
-      this.pagenumber--
-      console.log(`https://rickandmortyapi.com/api/character/?page=${this.pagenumber}&name=${this._searchCharacterName}`)
+
     }
 }
