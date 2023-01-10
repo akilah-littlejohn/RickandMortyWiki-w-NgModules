@@ -54,13 +54,13 @@ article {
 }
 
 
-.card-status-icon_alive {
+.card-icon_alive {
   color: yellowgreen;
 }
 
-.card-status-icon_dead {
+.card-icon_dead {
   color: red;
 }
-.card-status-icon_unknown {
+.card-icon_unknown {
   color: grey;
 }

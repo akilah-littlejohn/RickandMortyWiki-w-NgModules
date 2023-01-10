@@ -10,4 +10,12 @@ export class CharCardComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+  
+  displayCharacterStatus(status) {
+    const character_status = {
+      'card-status-icon_alive': status === 'Alive',
+      'card-status-icon_dead': status === 'Dead',
+      'card-status-icon_unknown': status === 'Unknown',
+    };
+  }
 }
