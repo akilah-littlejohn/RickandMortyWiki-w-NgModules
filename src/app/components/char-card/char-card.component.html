@@ -4,7 +4,11 @@
       <mat-list>
         <mat-list-item>
           <mat-icon
-          [ngClass]="{'card-icon_alive': characterInfo.status === 'Alive', 'card-icon_dead': characterInfo.status === 'Dead', 'card-icon_unknown': characterInfo.status === 'Unknown'}"
+            [ngClass]="{
+              'card-icon_alive': characterInfo.status === 'Alive',
+              'card-icon_dead': characterInfo.status === 'Dead',
+              'card-icon_unknown': characterInfo.status === 'Unknown'
+            }"
             matListItemIcon
             >circle</mat-icon
           >
