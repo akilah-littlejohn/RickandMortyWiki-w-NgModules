@@ -26,13 +26,12 @@ export class SearchbarComponent implements OnInit {
   }
   getNextResults(){
     this.pagenumber++
-    console.log(`https://rickandmortyapi.com/api/character/?page=${this.pagenumber}&name=${this._searchCharacterName}`) 
     this.getCharacterdata();
     
   }
     getPreviousResults(){
       this.pagenumber--
-      console.log(`https://rickandmortyapi.com/api/character/?page=${this.pagenumber}&name=${this._searchCharacterName}`)
+      this.getCharacterdata();
     }
 
     getCharacterdata(){
