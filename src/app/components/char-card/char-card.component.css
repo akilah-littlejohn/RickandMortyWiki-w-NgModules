@@ -19,6 +19,13 @@ img {
   border-radius: 25px;
 
 }
+
+article {
+  margin: 20px;
+  background-color: rgb(32 35 41);
+  padding: 30px;
+
+}
 .character-status_{
   font-size: medium;
   font-family: 'Annie Use Your Telescope';
@@ -45,11 +52,7 @@ img {
   display: flex;
   justify-content: center;
 }
-.char-card--container {
-  margin: 20px;
-  background-color: rgb(32 35 41);
-  padding: 30px;
-}
+
 
 .card-status-icon_alive {
   color: yellowgreen;
