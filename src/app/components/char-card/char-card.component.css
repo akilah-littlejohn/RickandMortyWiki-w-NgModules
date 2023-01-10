@@ -30,7 +30,7 @@ article {
   font-size: medium;
   font-family: 'Annie Use Your Telescope';
 }
-.characterCard-wrapper {
+.card-wrapper {
   padding: 10px;
   width: 70vw;
   font-family: Luckiest Guy;
@@ -39,7 +39,7 @@ article {
   border-radius: 15px;
   color: #fff;
 }
-.character-table {
+.card-table {
   
     display: grid;
     grid-template-columns: repeat(2, 1fr);
