@@ -55,13 +55,13 @@ img {
   border: red solid;
 }
 
-.charCard-status-icon_alive {
+.card-status-icon_alive {
   color: yellowgreen;
 }
 
-.charCard-status-icon_dead {
+.card-status-icon_dead {
   color: red;
 }
-.charCard-status-icon_unknown {
+.card-status-icon_unknown {
   color: grey;
 }
