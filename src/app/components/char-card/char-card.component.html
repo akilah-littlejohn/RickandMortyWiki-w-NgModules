@@ -3,17 +3,22 @@
     <div>
       <mat-list>
         <mat-list-item>
-          <mat-icon [ngClass]="{
-            
-          }" matListItemIcon>circle</mat-icon>
-          <h1 matListItemTitle> <span class="card-status">{{characterInfo.status}}</span> | {{ characterInfo.name }} </h1>
+          <mat-icon
+          [ngClass]="{'card-icon_alive': characterInfo.status === 'Alive', 'card-icon_dead': characterInfo.status === 'Dead', 'card-icon_unknown': characterInfo.status === 'Unknown'}"
+            matListItemIcon
+            >circle</mat-icon
+          >
+          <h1 matListItemTitle>
+            <span class="card-status">{{ characterInfo.status }}</span> |
+            {{ characterInfo.name }}
+          </h1>
         </mat-list-item>
       </mat-list>
-      <div class="card-container"><img [src]="characterInfo.image" alt="" />
+      <div class="card-container">
+        <img [src]="characterInfo.image" alt="" />
       </div>
     </div>
     <div class="card-table card-container">
-
       <h3>Last Known Location:</h3>
       <p>{{ characterInfo.location.name }}</p>
 
