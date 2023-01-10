@@ -55,12 +55,12 @@ article {
 
 
 .card-icon_alive {
-  color: yellowgreen;
+  color: green;
 }
 
 .card-icon_dead {
   color: red;
 }
 .card-icon_unknown {
-  color: grey;
+  color:grey;
 }
