@@ -7,9 +7,10 @@
           <h1 matListItemTitle> <span class="character-status_">{{characterInfo.status}}</span> | {{ characterInfo.name }} </h1>
         </mat-list-item>
       </mat-list>
-      <img [src]="characterInfo.image" alt="" />
+      <div class="card-container"><img [src]="characterInfo.image" alt="" />
+      </div>
     </div>
-    <div class="character-table">
+    <div class="character-table card-container">
 
       <h3>Last Known Location:</h3>
       <p>{{ characterInfo.location.name }}</p>
