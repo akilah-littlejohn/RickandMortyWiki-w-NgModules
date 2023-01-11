@@ -10,7 +10,7 @@ export class CharacterdataService {
   getCharacterData(name, number) {
     return this.http.get(`https://rickandmortyapi.com/api/character/?page=${number}&name=${name}`);
 
-    console.log(`https://rickandmortyapi.com/api/character/?page=${number}&name=${name}`)
+    
   }
 
 
