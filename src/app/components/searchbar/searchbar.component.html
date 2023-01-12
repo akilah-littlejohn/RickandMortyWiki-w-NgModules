@@ -9,12 +9,7 @@
     <button type="submit">Search</button>
   </form>
 </section>
-<mat-icon class="searchbar-page" (click)="getPreviousResults(search.value)"
-  >arrow_left</mat-icon
->
-<mat-icon class="searchbar-page" (click)="getNextResults(search.value)"
-  >arrow_right</mat-icon
->
+
 <app-char-card
   *ngFor="let character of searchedName; index as i"
   [characterInfo]="character"
