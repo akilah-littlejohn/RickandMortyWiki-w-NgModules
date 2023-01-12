@@ -28,13 +28,13 @@ export class SearchbarComponent implements OnInit {
         console.log(this.searchedName)
       })
     }
-  getNextResults() {
-    this.pagenumber++;
+  getNextResults(value) {
+    this.searchname(value,this.pagenumber++)
    
   }
-  getPreviousResults() {
+  getPreviousResults(value) {
     if (this.pagenumber > 1) {
-      this.pagenumber--;
+      this.searchname(value,this.pagenumber--)
     
     }
   }

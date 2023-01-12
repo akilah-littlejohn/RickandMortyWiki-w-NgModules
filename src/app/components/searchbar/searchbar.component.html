@@ -1,6 +1,5 @@
-<h1>Page {{pagenumber}}</h1>
-<mat-icon class="searchbar-page" (click)="getPreviousResults()">arrow_left</mat-icon>
-<mat-icon class="searchbar-page"  (click)="getNextResults()">arrow_right</mat-icon>
+
+
 <section class="searchbar-wrapper">
   
   <form ngSubmit="" #searchbar>
@@ -22,4 +21,5 @@
   "
   [characterInfo]="character" 
 ></app-char-card>
-
+<mat-icon class="searchbar-page" (click)="getPreviousResults(search.value)">arrow_left</mat-icon>
+<mat-icon class="searchbar-page"  (click)="getNextResults(search.value)">arrow_right</mat-icon>
