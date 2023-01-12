@@ -10,7 +10,7 @@ import { SearchbarService } from '../../services/searchbar.service';
 })
 export class SearchbarComponent implements OnInit {
   @Input() charactaName: object[];
-  pagenumber: number = 0;
+  pagenumber: number = 1;
   allcharacterNames:unknown[];
   _searchCharacterName: string = '';
 
@@ -30,8 +30,11 @@ export class SearchbarComponent implements OnInit {
     
   }
     getPreviousResults(){
-      this.pagenumber--
-      this.getCharacterdata();
+      while(this.pagenumber > 1){
+        this.pagenumber--
+        this.getCharacterdata();
+      }
+
     }
 
     getCharacterdata(){
