@@ -34,10 +34,12 @@ export class SearchbarComponent implements OnInit {
   }
   getPreviousResults(value) {
     if (this.pagenumber > 1) {
-      this.searchname(value,this.pagenumber--)
+      this.searchname(value,this.pagenumber++)
     
     }
   }
-
+next(){
+  this.pagenumber++
+}
 
 }
