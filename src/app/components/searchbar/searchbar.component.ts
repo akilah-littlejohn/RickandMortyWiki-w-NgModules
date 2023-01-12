@@ -1,7 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, Input } from '@angular/core';
-import { CharacterSearchFilterPipe } from '../../character-search-filter.pipe';
 import { CharacterdataService } from '../../services/characterdata.service';
-import { SearchbarService } from '../../services/searchbar.service';
+
 
 @Component({
   selector: 'app-searchbar',
@@ -10,42 +10,34 @@ import { SearchbarService } from '../../services/searchbar.service';
 })
 export class SearchbarComponent implements OnInit {
   @Input() charactaName: object[];
-  pagenumber: number = 1;
-  allcharacterNames:unknown[];
-  _searchCharacterName: string = '';
+  pagenumber: number = 1;;
+  searchedName: [];
 
   constructor(
-    public filterNames: CharacterSearchFilterPipe,
     public urlApi: CharacterdataService,
-    public searchFilteredNames: SearchbarService
+    public http: HttpClient
   ) {}
 
   ngOnInit() {
-    this.getCharacterdata();
 
   }
-  getNextResults(){
-    this.pagenumber++
-    this.getCharacterdata();
+  searchname(name, page){
+    return this.http.get(`https://rickandmortyapi.com/api/character/?name=${name}&page=${page}`).subscribe(
+      (data)=>{
+        this.searchedName = data['results'];
+        console.log(this.searchedName)
+      })
+    }
+  getNextResults() {
+    this.pagenumber++;
+   
+  }
+  getPreviousResults() {
+    if (this.pagenumber > 1) {
+      this.pagenumber--;
     
+    }
   }
-    getPreviousResults(){
-      while(this.pagenumber > 1){
-        this.pagenumber--
-        this.getCharacterdata();
-      }
 
-    }
 
-    getCharacterdata(){
-      this.urlApi
-      .getCharacterData(this._searchCharacterName, this.pagenumber)
-      .subscribe((data) => {
-        this.charactaName = data['results'];
-        this.allcharacterNames = this.charactaName;
-        console.log(this.charactaName);
-      });
- 
-
-    }
 }

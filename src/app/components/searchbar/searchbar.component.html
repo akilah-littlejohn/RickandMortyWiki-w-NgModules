@@ -1,18 +1,15 @@
+<h1>Page {{pagenumber}}</h1>
+<mat-icon class="searchbar-page" (click)="getPreviousResults()">arrow_left</mat-icon>
+<mat-icon class="searchbar-page"  (click)="getNextResults()">arrow_right</mat-icon>
 <section class="searchbar-wrapper">
-  <h1>Page {{pagenumber}}</h1>
-  <form>
+  
+  <form ngSubmit="" #searchbar>
     <input
       type="search"
       placeholder="Enter Character Here...."
-      name="_searchCharacterName"
-      [(ngModel)]="_searchCharacterName"
-      (input)="
-        this.searchFilteredNames.formatFilteredNames(
-          charactaName,
-          allcharacterNames,
-          _searchCharacterName
-        )
-      "
+      #search 
+      (keyup)="searchname(search.value, pagenumber)"
+      
     />
     <button type="submit">Search</button>
   </form>
@@ -20,11 +17,9 @@
 
 <app-char-card
   *ngFor="
-    let character of allcharacterNames
-      | characterSearchFilter: _searchCharacterName;
+    let character of searchedName
     index as i  
   "
   [characterInfo]="character" 
 ></app-char-card>
-<mat-icon class="searchbar-page" (click)="getPreviousResults()">arrow_left</mat-icon>
-<mat-icon class="searchbar-page"  (click)="getNextResults()">arrow_right</mat-icon>
+
