@@ -10,9 +10,7 @@ import { CharCardComponent } from './components/char-card/char-card.component';
 import { HomeComponent } from './components/home/home.component';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import { CharacterdataService } from './services/characterdata.service';
-import { SearchbarService } from './services/searchbar.service';
-import { CharacterSearchFilterPipe } from './character-search-filter.pipe';
-import { SearchResultsComponent } from './components/searchbar/search-results/search-results.component';
+
 
 @NgModule({
   imports: [
@@ -23,15 +21,13 @@ import { SearchResultsComponent } from './components/searchbar/search-results/se
     MatListModule,
   ],
   declarations: [
-    CharacterSearchFilterPipe,
     AppComponent,
     RandmsvgComponent,
     CharCardComponent,
     HomeComponent,
     SearchbarComponent,
-    SearchResultsComponent,
   ],
   bootstrap: [AppComponent],
-  providers: [CharacterdataService, SearchbarService],
+  providers: [CharacterdataService],
 })
 export class AppModule {}
