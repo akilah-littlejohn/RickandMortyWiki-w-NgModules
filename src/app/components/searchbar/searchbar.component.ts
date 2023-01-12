@@ -28,18 +28,5 @@ export class SearchbarComponent implements OnInit {
         console.log(this.searchedName)
       })
     }
-  getNextResults(value) {
-    this.searchname(value,this.pagenumber++)
-   
-  }
-  getPreviousResults(value) {
-    if (this.pagenumber > 1) {
-      this.searchname(value,this.pagenumber++)
-    
-    }
-  }
-next(){
-  this.pagenumber++
-}
 
 }
