@@ -10,7 +10,7 @@ import { CharCardComponent } from './components/char-card/char-card.component';
 import { HomeComponent } from './components/home/home.component';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import { CharacterdataService } from './services/characterdata.service';
-import { SearchResultsComponent } from './components/searchbar/search-results/search-results.component';
+
 
 @NgModule({
   imports: [
@@ -26,7 +26,6 @@ import { SearchResultsComponent } from './components/searchbar/search-results/se
     CharCardComponent,
     HomeComponent,
     SearchbarComponent,
-    SearchResultsComponent,
   ],
   bootstrap: [AppComponent],
   providers: [CharacterdataService],
