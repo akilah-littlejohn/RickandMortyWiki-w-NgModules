@@ -4,36 +4,34 @@
       <mat-list>
         <mat-list-item>
           <mat-icon
-            [ngClass]="{
-              'card-icon_alive': characterInfo.status === 'Alive',
-              'card-icon_dead': characterInfo.status === 'Dead',
-              'card-icon_unknown': characterInfo.status === 'unknown'
-            }"
+            [class.card-icon_alive]="characterInfo().status === 'Alive'"
+            [class.card-icon_dead]="characterInfo().status === 'Dead'"
+            [class.card-icon_unknown]="characterInfo().status === 'unknown'"
             matListItemIcon
             >circle</mat-icon
           >
           <h1 matListItemTitle>
-            <span class="card-status">{{ characterInfo.status }}</span> |
-            {{ characterInfo.name }}
+            <span class="card-status">{{ characterInfo().status }}</span> |
+            {{ characterInfo().name }}
           </h1>
         </mat-list-item>
       </mat-list>
       <div class="card-container">
-        <img [src]="characterInfo.image" alt="" />
+        <img [src]="characterInfo().image" [alt]="characterInfo().name" />
       </div>
     </div>
     <div class="card-table card-container">
       <h3>Last Known Location:</h3>
-      <p>{{ characterInfo.location.name }}</p>
+      <p>{{ characterInfo().location.name }}</p>
 
       <h3>Gender:</h3>
-      <p>{{ characterInfo.gender }}</p>
+      <p>{{ characterInfo().gender }}</p>
 
       <h3>Species:</h3>
-      <p>{{ characterInfo.species }}</p>
+      <p>{{ characterInfo().species }}</p>
 
       <h3>Number Of Episodes:</h3>
-      <p>{{ characterInfo.episode.length }}</p>
+      <p>{{ characterInfo().episode.length }}</p>
     </div>
   </section>
 </article>

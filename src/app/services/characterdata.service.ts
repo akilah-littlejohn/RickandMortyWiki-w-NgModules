@@ -1,17 +1,20 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { CharacterResponse } from '../models/character.model';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class CharacterdataService {
-  urlApi = "https://rickandmortyapi.com/api/character/?page=&"
-  
+  private readonly http = inject(HttpClient);
+  private readonly apiUrl = 'https://rickandmortyapi.com/api/character';
 
-  constructor(public http: HttpClient) {}
-  getCharacterData(name, number) {
-    return this.http.get(`https://rickandmortyapi.com/api/character/?page=${number}&name=${name}`);   
+  getCharacterData(name: string, page: number): Observable<CharacterResponse> {
+    return this.http.get<CharacterResponse>(
+      `${this.apiUrl}?page=${page}&name=${name}`
+    );
   }
-searchname(name){
-  return this.http.get(`https://rickandmortyapi.com/api/character/?name=${name}`)
-}
 
+  searchByName(name: string): Observable<CharacterResponse> {
+    return this.http.get<CharacterResponse>(`${this.apiUrl}?name=${name}`);
+  }
 }
