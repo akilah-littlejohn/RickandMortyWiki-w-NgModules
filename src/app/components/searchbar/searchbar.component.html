@@ -4,14 +4,14 @@
       type="search"
       placeholder="Enter Character Here...."
       #search
-      (keyup)="searchname(search.value, pagenumber)"
+      (keyup)="searchByName(search.value, pageNumber())"
     />
     <button type="submit">Search</button>
   </form>
 </section>
 
-<app-char-card
-  *ngFor="let character of searchedName; index as i"
-  [characterInfo]="character"
-></app-char-card>
-<app-randmsvg></app-randmsvg>
+@for (character of searchedCharacters(); track character.id) {
+  <app-char-card [characterInfo]="character" />
+}
+
+<app-randmsvg />

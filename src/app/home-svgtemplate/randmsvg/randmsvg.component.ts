@@ -1,15 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-randmsvg',
+  standalone: true,
   templateUrl: './randmsvg.component.svg',
-  styleUrls: ['./randmsvg.component.css']
+  styleUrls: ['./randmsvg.component.css'],
 })
-export class RandmsvgComponent {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}
+export class RandmsvgComponent {}

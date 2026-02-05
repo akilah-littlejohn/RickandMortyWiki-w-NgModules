@@ -1,32 +1,41 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, inject, signal, DestroyRef } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { FormsModule } from '@angular/forms';
 import { CharacterdataService } from '../../services/characterdata.service';
-
+import { CharCardComponent } from '../char-card/char-card.component';
+import { RandmsvgComponent } from '../../home-svgtemplate/randmsvg/randmsvg.component';
+import { Character } from '../../models/character.model';
 
 @Component({
   selector: 'app-searchbar',
+  standalone: true,
+  imports: [FormsModule, CharCardComponent, RandmsvgComponent],
   templateUrl: './searchbar.component.html',
   styleUrls: ['./searchbar.component.css'],
 })
-export class SearchbarComponent implements OnInit {
-  @Input() charactaName: object[];
-  pagenumber: number = 1;;
-  searchedName: [];
+export class SearchbarComponent {
+  private readonly characterService = inject(CharacterdataService);
+  private readonly destroyRef = inject(DestroyRef);
 
-  constructor(
-    public urlApi: CharacterdataService,
-    public http: HttpClient
-  ) {}
+  searchedCharacters = signal<Character[]>([]);
+  pageNumber = signal(1);
 
-  ngOnInit() {
-
-  }
-  searchname(name, page){
-    return this.http.get(`https://rickandmortyapi.com/api/character/?name=${name}&page=${page}`).subscribe(
-      (data)=>{
-        this.searchedName = data['results'];
-        console.log(this.searchedName)
-      })
+  searchByName(name: string, page: number): void {
+    if (!name.trim()) {
+      this.searchedCharacters.set([]);
+      return;
     }
 
+    this.characterService
+      .getCharacterData(name, page)
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe({
+        next: (response) => {
+          this.searchedCharacters.set(response.results);
+        },
+        error: () => {
+          this.searchedCharacters.set([]);
+        },
+      });
+  }
 }
